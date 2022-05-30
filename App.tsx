@@ -1,10 +1,11 @@
 import { useFonts } from 'expo-font';
 import { StatusBar } from 'expo-status-bar';
-import { SafeAreaView, StyleSheet, Text, View } from 'react-native';
+import { SafeAreaView, StyleSheet, View } from 'react-native';
 import customStyles from './src/styles/customStyles';
-import { color } from './src/theme/color';
+import { colors } from './src/theme/colors';
 import { Props } from './src/model/types';
 import { typography } from './src/theme/typography';
+import Text from './src/components/text/text';
 
 const App: React.FC<Props> = () => {
   const [loaded] = useFonts({
@@ -19,9 +20,8 @@ const App: React.FC<Props> = () => {
 
   return (
     <SafeAreaView style={customStyles.AndroidSafeArea}>
-        <View style={{ backgroundColor: color.lightGreen, paddingVertical: 10 }}>
-          <Text style={{ fontFamily: typography.bold, fontWeight: '600', textAlign: 'center', fontSize: 22, color: color.white }}>Welcome</Text>
-          <StatusBar style='auto' />
+        <View style={{ backgroundColor: colors.lightGreen, paddingVertical: 10 }}>
+          <Text preset="h1" style={{ color: 'yellow' }}>Welcome</Text>
         </View>
     </SafeAreaView>
   );

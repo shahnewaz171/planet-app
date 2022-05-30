@@ -1,6 +1,6 @@
 import { Props } from "../model/types";
 
-export const color: Props = {
+export const colors: Props = {
     black: '#070724',
     white: '#fff',
     darkGray: '#38384F',
