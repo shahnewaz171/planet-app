@@ -1,4 +1,4 @@
-import { Props } from "./model/types";
+import { Props } from "../model/types";
 
 export const color: Props = {
     black: '#070724',
