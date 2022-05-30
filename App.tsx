@@ -1,15 +1,17 @@
 import React from 'react';
-import { NavigationContainer } from '@react-navigation/native';
+import { DarkTheme, NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { useFonts } from 'expo-font';
 import { Props } from './src/model/types';
 import Text from './src/components/text/text';
 import Home from './src/screens/Home';
 import { StatusBar } from 'expo-status-bar';
+import { SafeAreaView, View } from 'react-native';
+import customStyles from './src/styles/customStyles';
 
 const Stack = createNativeStackNavigator();
 
-const App: React.FC = () => {
+const App: React.FC<any> = () => {
   const [loaded] = useFonts({
     'Antonio-Medium': require('./assets/fonts/Antonio-Medium.ttf'),
     'Spartan-Bold': require('./assets/fonts/Spartan-Bold.ttf'),
@@ -21,12 +23,14 @@ const App: React.FC = () => {
   }
 
   return (
-    <NavigationContainer>
-      <Stack.Navigator>
-        <Stack.Screen name="Home" component={Home} />
-      </Stack.Navigator>
-      <StatusBar style='dark' />
-    </NavigationContainer>
+    <View style={customStyles.container}>
+      <NavigationContainer theme={DarkTheme}>
+        <Stack.Navigator screenOptions={{ headerShown: false }}>
+          <Stack.Screen name="Home" component={Home} />
+        </Stack.Navigator>
+        <StatusBar style='dark' />
+      </NavigationContainer>
+    </View>
   );
 }
 

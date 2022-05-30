@@ -1,13 +1,15 @@
 import React from 'react';
-import { View } from 'react-native';
+import { SafeAreaView, View } from 'react-native';
+import PlanetHeader from '../components/text/PlanetHeader/PlanetHeader';
 import Text from '../components/text/text';
+import customStyles from '../styles/customStyles';
 
 const Home = () => {
     
     return (
-        <View>
-            <Text>Home</Text>
-        </View>
+        <SafeAreaView style={customStyles.AndroidSafeArea}>
+            <PlanetHeader />
+        </SafeAreaView>
     );
 };
 
